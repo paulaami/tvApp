@@ -1,14 +1,9 @@
 export const getShowsByKey = key => {
- return fetch(`http://www.tvmaze.com/api/search/shows?q=${key}`)
- .then(resp => console.log(resp.json()))
- .then(data=> console.log(data))
+ return fetch(`http://api.tvmaze.com/search/shows?q=${key}`)
+ .then(resp => resp.json())
 }
 
 export const getShowById = id => {
- return fetch(`http://www.tvmaze.com/api/shows/${id}?embed=cast`)
- .then(resp => console.log(resp.json()))
- .then(data=> console.log(data))
+ return fetch(`http://api.tvmaze.com/shows/${id}?embed=cast`)
+ .then(resp => resp.json())
 }
-
-
-getShowsByKey('girls')
